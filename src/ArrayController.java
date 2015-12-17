@@ -16,14 +16,26 @@ public class ArrayController {
 		theView.addinsertButtonListener(new insertButtonListener());
 		theView.addDeleteButtonListener(new deleteButtonListener());
 		theView.addFindButtonListener(new findButtonListener());
+		theView.addSortButtonListener(new sortButtonListener());
 		
 	}
 	
 	class sortButtonListener implements ActionListener {
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
+			
+			
+			if(theView.descendButton.isSelected()){
+				
+				theModel.bubbleSortDescending();
+				
+			}else{
+				
+				theModel.bubbleSort();
+			}
+			
+			theView.updateTable(theModel.getArray(), theModel.getArraySize());
 			
 		}
 		

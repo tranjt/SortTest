@@ -115,5 +115,47 @@ public class ArrayStruct {
 		return foundAt;
 				
 	}
+	
+	public void bubbleSort (){
+		
+		for (int i = arraySize; i > 1; i--){
+			
+			for (int j = 0; j < i; j++){
+				
+				if (array[j] > array[j+1]){
+					
+					swapValues(j, j+1);
+				}
+			}
+		}
+		
+		
+	}
+	
+	
+	public void bubbleSortDescending (){
+		
+		for (int i = 0; i < arraySize; i++){
+			
+			for (int j = 1; j < (arraySize); j++){
+				
+				 if(array[j-1] < array[j]){
+					
+					swapValues(j-1, j);
+				}
+			}
+		}
+		
+		
+	}
+	
+	public void swapValues(int firstIndex, int secondIndex){
+		
+		int temp =  array[firstIndex];
+		
+		array[firstIndex] = array[secondIndex];
+		array[secondIndex] = temp;
+		
+	}
 
 }
