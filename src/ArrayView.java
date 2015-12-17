@@ -190,5 +190,16 @@ public class ArrayView extends JFrame{
 		
 	}
 	
+	public int getValue(){
+		
+		return Integer.parseInt(valueField.getText());
+		
+	}
+	
+	public int getIndex(){
+		
+		return Integer.parseInt(indexField.getText());
+	}
+	
 
 }
