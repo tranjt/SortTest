@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -12,6 +13,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+@SuppressWarnings("serial")
 public class ArrayView extends JFrame{
 	
 	
@@ -23,6 +25,32 @@ public class ArrayView extends JFrame{
 	private JPanel contentPane, topPanel, centerPanel, dirPanel, sortPanel;
 	private JScrollPane bottomPanel;
 	
+	
+	
+	Object[][] data = {
+			
+				            {new Integer(0), new Integer(0), ""},	
+				            {new Integer(1), new Integer(0), ""},				
+				            {new Integer(2), new Integer(0), ""},				
+				            {new Integer(3), new Integer(0), ""},				
+				            {new Integer(4), new Integer(0), ""},				
+				            {new Integer(5), new Integer(0), ""},				
+				     
+			
+				        };
+			
+				     
+			
+	 String[] columnNames = {"Index",
+			
+				            "Value",
+			
+				            "Selected"};
+			
+				     
+
+	
+    DefaultTableModel tableModel = new DefaultTableModel(data, columnNames);
 	
 	
 	ArrayView(){
@@ -112,34 +140,7 @@ public class ArrayView extends JFrame{
 		sortPanel.add(binary);
 		
 		centerPanel.add(sortButton);
-		
-		Object[][] data = {
-				
-					            {new Integer(0), new Integer(0), ""},	
-					            {new Integer(1), new Integer(0), ""},				
-					            {new Integer(2), new Integer(0), ""},				
-					            {new Integer(3), new Integer(0), ""},				
-					            {new Integer(4), new Integer(0), ""},				
-					            {new Integer(5), new Integer(0), ""},				
-					            {new Integer(6), new Integer(0), ""},				
-					            {new Integer(7), new Integer(0), ""},				
-					            {new Integer(8), new Integer(0), ""},
-					            {new Integer(9), new Integer(0), ""},
-				
-					        };
-				
-					     
-				
-		 String[] columnNames = {"Index",
-				
-					            "Value",
-				
-					            "Selected"};
-				
-					     
 
-		
-	    DefaultTableModel tableModel = new DefaultTableModel(data, columnNames);
 	    table = new JTable(tableModel);
 	    table.setFillsViewportHeight(true);
 	    
@@ -150,6 +151,44 @@ public class ArrayView extends JFrame{
 	   
 		setVisible(true);
 		
+		
+		
 	}
+	
+	public void updateTable( int [] array, int rows){
+		
+		tableModel.setRowCount(0);
+		
+		for (int i = 0; i < rows; i++) {
+			
+			tableModel.insertRow(i, new Object[] {i, array[i]});
+		}
+		
+	}
+	
+	public void addSortButtonListener (ActionListener sortButtonListener){
+		
+		sortButton.addActionListener(sortButtonListener);
+		
+	}
+	
+	public void addDeleteButtonListener (ActionListener deleteButtonListener){
+		
+		deleteButton.addActionListener(deleteButtonListener);
+		
+	}
+	
+	public void addFindButtonListener (ActionListener findButtonListener){
+		
+		findButton.addActionListener(findButtonListener);
+		
+	}
+	
+	public void addinsertButtonListener (ActionListener insertButtonListener){
+		
+		deleteButton.addActionListener(insertButtonListener);
+		
+	}
+	
 
 }

@@ -17,6 +17,6 @@ public class SortTA {
 		
 		ArrayView theView = new ArrayView();
 		
-		
+		new ArrayController (testArray, theView);		
 	}
 }

@@ -1,4 +1,5 @@
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ArrayController {
 	
@@ -9,6 +10,48 @@ public class ArrayController {
 		
 		this.theModel = theModel;
 		this.theView = theView;
+		
+		theView.updateTable(theModel.getArray(), theModel.getArray().length);
+		
+	}
+	
+	class sortButtonListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
+	class deleteButtonListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
+	class findButtonListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
+	class insertButtonListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
 		
 	}
 	
