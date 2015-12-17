@@ -11,7 +11,9 @@ public class ArrayController {
 		this.theModel = theModel;
 		this.theView = theView;
 		
-		theView.updateTable(theModel.getArray(), theModel.getArray().length);
+		theView.updateTable(theModel.getArray(), theModel.getArraySize());
+		
+		theView.addinsertButtonListener(new insertButtonListener());
 		
 	}
 	
@@ -47,9 +49,22 @@ public class ArrayController {
 	
 	class insertButtonListener implements ActionListener {
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
+			
+			try{
+				
+			theModel.insert(theView.getValue());
+			
+			theModel.printArray();
+			
+			theView.updateTable(theModel.getArray(), theModel.getArraySize());
+			
+			}catch (NumberFormatException ex) {
+			
+				theView.sendMessageToUser("Please enter an number in the value box!");
+			}
+		
 			
 		}
 		

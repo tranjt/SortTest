@@ -187,7 +187,7 @@ public class ArrayView extends JFrame{
 	
 	public void addinsertButtonListener (ActionListener insertButtonListener){
 		
-		deleteButton.addActionListener(insertButtonListener);
+		insertButton.addActionListener(insertButtonListener);
 		
 	}
 	

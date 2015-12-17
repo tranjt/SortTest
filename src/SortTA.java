@@ -4,16 +4,16 @@ public class SortTA {
 	
 	public static void main (String [] args){
 		
-		ArrayStruct  testArray = new ArrayStruct(10);
+		ArrayStruct  testArray = new ArrayStruct();
 		testArray.generateRandomArray();
 		
 		
-		testArray.printArray();
+	//	testArray.printArray();
 		
-		System.out.println();
+	//	System.out.println();
 		
-		testArray.deleteIndex(5);
-		testArray.printArray();
+	//	testArray.deleteIndex(5);
+	//	testArray.printArray();
 		
 		ArrayView theView = new ArrayView();
 		

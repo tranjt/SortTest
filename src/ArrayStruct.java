@@ -3,26 +3,25 @@ public class ArrayStruct {
 	
 	private int [] array;
 	
-	private int arraySize;
-	private int elementsInArray;
+	private int arraySize = 10;
 	
-	ArrayStruct(int arraySize){
+	
+	ArrayStruct(){
 		
-		this.arraySize = arraySize;
-		array = new int [arraySize];
+		array = new int [40];
 		
 	}
 	
 	
 	public void generateRandomArray (){
 		
-		for (int i = 0; i < array.length; i++){
+		for (int i = 0; i < arraySize; i++){
 			
 			array[i] = (int)(Math.random()*50);
 			
 		}
 		
-		elementsInArray = array.length;
+		
 		
 	}
 	
@@ -36,7 +35,7 @@ public class ArrayStruct {
 	
 	public int getArraySize(){
 		
-		return array.length;
+		return arraySize;
 	}
 	
 	
@@ -49,14 +48,14 @@ public class ArrayStruct {
 	
 	public void insert(int value){
 		
-		if (elementsInArray == array.length){
+		if (arraySize == array.length){
 			
 			System.out.println("Array is full");
 			
 		}else {
 			
-			array[elementsInArray] = value;
-			elementsInArray++;
+			array[arraySize] = value;
+			arraySize++;
 		}
 	
 	}
@@ -64,11 +63,11 @@ public class ArrayStruct {
 	
 	public void deleteIndex(int index ){
 		
-		for (int i = index; i < (elementsInArray-1); i++){
+		for (int i = index; i < (arraySize-1); i++){
 			
 			array[i] = array[i+1];
 			
-			elementsInArray--;
+			arraySize--;
 		}
 		
 	}
@@ -76,7 +75,7 @@ public class ArrayStruct {
 	
 	public void printArray(){
 		
-		for (int i = 0; i < array.length; i++){
+		for (int i = 0; i < arraySize; i++){
 			System.out.println(array[i]);
 		}
 		
