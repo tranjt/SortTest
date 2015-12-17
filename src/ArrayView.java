@@ -19,7 +19,7 @@ public class ArrayView extends JFrame{
 	
 	
 	private JButton deleteButton, insertButton, findButton, sortButton;
-	private JRadioButton ascendButton, descendButton, linear, binary;
+	protected JRadioButton ascendButton, descendButton, linear, binary;
 	private JLabel valueLabel, indexLabel;
 	private JTextField valueField, indexField;
 	private JTable table;

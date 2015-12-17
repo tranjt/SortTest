@@ -63,13 +63,15 @@ public class ArrayStruct {
 	
 	public void deleteIndex(int index ){
 		
-		for (int i = index; i < (arraySize-1); i++){
-			
-			array[i] = array[i+1];
-			
-			arraySize--;
-		}
+		if (index < arraySize){
 		
+			for (int i = index; i < (arraySize-1); i++){
+				
+				array[i] = array[i+1];
+				
+				arraySize--;
+			}
+		}
 	}
 	
 	
@@ -79,6 +81,39 @@ public class ArrayStruct {
 			System.out.println(array[i]);
 		}
 		
+	}
+	
+	public boolean doesArrayContainValue(int searchValue){
+		
+		boolean containsValue = false;
+		
+		for (int i = 0; i < arraySize; i++){
+				
+				if (array[i] == searchValue)
+					containsValue = true;
+			}
+				
+		return containsValue;
+		
+	}
+	
+	
+	public String linearSearch(int searchValue){
+		
+		String foundAt = "";
+		
+		for (int i = 0; i < arraySize; i++){
+			
+			if (array[i] == searchValue){
+				
+				foundAt += i + " ";
+			}
+				
+		}
+			
+			
+		return foundAt;
+				
 	}
 
 }

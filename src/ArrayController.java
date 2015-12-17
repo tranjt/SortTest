@@ -14,6 +14,8 @@ public class ArrayController {
 		theView.updateTable(theModel.getArray(), theModel.getArraySize());
 		
 		theView.addinsertButtonListener(new insertButtonListener());
+		theView.addDeleteButtonListener(new deleteButtonListener());
+		theView.addFindButtonListener(new findButtonListener());
 		
 	}
 	
@@ -29,19 +31,54 @@ public class ArrayController {
 	
 	class deleteButtonListener implements ActionListener {
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
 			
+			try{
+				
+				theModel.deleteIndex(theView.getIndex()); 
+				
+				theModel.printArray();
+				
+				theView.updateTable(theModel.getArray(), theModel.getArraySize());
+				
+			}catch (NumberFormatException ex) {
+			
+				theView.sendMessageToUser("Please enter index value in the index box!");
+			}
 		}
 		
 	}
 	
 	class findButtonListener implements ActionListener {
 
-		@Override
+		
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
+			
+			String valueAt = "";
+			
+			if (theView.linear.isSelected()){
+				
+				try{
+					
+					if (theModel.doesArrayContainValue(theView.getValue())){
+						
+						valueAt = theModel.linearSearch(theView.getValue());
+						
+						
+						theView.sendMessageToUser("Found at " + valueAt);
+						
+					}else 
+						theView.sendMessageToUser("Value not found");
+					
+					
+					
+					
+					}catch (NumberFormatException ex) {
+					
+						theView.sendMessageToUser("Please enter an number in the value box!");
+					}
+			}
 			
 		}
 		
@@ -69,6 +106,8 @@ public class ArrayController {
 		}
 		
 	}
+	
+	
 	
 
 }
